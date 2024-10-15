@@ -22,7 +22,7 @@ const SidebarBattle = () => {
   const handleLogout = () => {
     clearLocalStorage('user');
     clearLocalStorage('pokemonsBattle');
-    navigate(PublicRoutes.LOGIN);
+    navigate('/' + PublicRoutes.LOGIN, { replace: true });
 }
 
   return (
