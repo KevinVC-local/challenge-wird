@@ -6,10 +6,11 @@ import { PokemonModel } from '../../../core/models/pokemon';
 import { FaPlus } from 'react-icons/fa';
 import { addPokemonButtle } from '../../../redux/states/pokemonBattle';
 import { useNavigate } from 'react-router-dom';
+import { Options } from '../../../core/models/select';
 
 const SelectPokemon = () => {
 
-  const dispatch = useDispatch();
+  const dispatch = useDispatch<any>();
   const navigate = useNavigate();
 
   const [page, setPage] = useState(0);
@@ -40,8 +41,8 @@ const SelectPokemon = () => {
     }
   };
 
-  const handleSelect = (e: any) => {
-    const number = e.url.split('/').slice(-2, -1)[0];
+  const handleSelect = (e: Options) => {
+    const number = e?.url?.split('/').slice(-2, -1)[0];
     navigate(`/dashboard/view-pokemon/${number}`);
 }
 

@@ -7,7 +7,7 @@ import { setPokemonsButtle, startLoadingPokemonsButtle } from "../states/pokemon
 
 
 export const getPokemons = ( limit: number ) => {
-    return async( dispatch, getState ) => {
+    return async( dispatch: any, _getState: any ) => {
         dispatch( startLoadingPokemons() );
 
         const { data } = await pokemonApi.get(`/pokemon?limit=${limit}&offset=0`);
@@ -17,7 +17,7 @@ export const getPokemons = ( limit: number ) => {
 }
 
 export const getPokemonsDetail = (page = 0) => {
-    return async( dispatch, getState ) => {
+    return async( dispatch: any, _getState: any ) => {
 
         if (page > 6) {
             return;
